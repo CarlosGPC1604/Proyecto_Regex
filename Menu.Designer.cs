@@ -81,11 +81,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(86, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 22);
+            this.label1.Size = new System.Drawing.Size(93, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ejercicio:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -93,11 +93,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(86, 130);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 22);
+            this.label2.Size = new System.Drawing.Size(121, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Descripción:";
             // 
@@ -129,10 +129,10 @@
             this.radioButton1.ForeColor = System.Drawing.Color.White;
             this.radioButton1.Location = new System.Drawing.Point(581, 302);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(133, 26);
+            this.radioButton1.Size = new System.Drawing.Size(81, 26);
             this.radioButton1.TabIndex = 4;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.Text = "Válido";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -148,6 +148,7 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Menu
             // 
