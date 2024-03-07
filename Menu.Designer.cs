@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.bttLimpiar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEjercicios = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,12 +47,13 @@
             this.bttLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttLimpiar.ForeColor = System.Drawing.Color.White;
-            this.bttLimpiar.Location = new System.Drawing.Point(90, 367);
+            this.bttLimpiar.Location = new System.Drawing.Point(90, 395);
             this.bttLimpiar.Name = "bttLimpiar";
             this.bttLimpiar.Size = new System.Drawing.Size(202, 49);
             this.bttLimpiar.TabIndex = 0;
             this.bttLimpiar.Text = "Limpiar";
             this.bttLimpiar.UseVisualStyleBackColor = true;
+            this.bttLimpiar.Click += new System.EventHandler(this.bttLimpiar_Click);
             // 
             // button1
             // 
@@ -62,28 +63,33 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(323, 367);
+            this.button1.Location = new System.Drawing.Point(323, 395);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 49);
             this.button1.TabIndex = 0;
             this.button1.Text = "Comprobar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // comboBoxEjercicios
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(86, 81);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 30);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxEjercicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEjercicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxEjercicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.comboBoxEjercicios.FormattingEnabled = true;
+            this.comboBoxEjercicios.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.comboBoxEjercicios.Location = new System.Drawing.Point(86, 109);
+            this.comboBoxEjercicios.Name = "comboBoxEjercicios";
+            this.comboBoxEjercicios.Size = new System.Drawing.Size(287, 30);
+            this.comboBoxEjercicios.TabIndex = 1;
+            this.comboBoxEjercicios.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(86, 40);
+            this.label1.Location = new System.Drawing.Point(86, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 22);
             this.label1.TabIndex = 2;
@@ -95,45 +101,48 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(86, 130);
+            this.label2.Location = new System.Drawing.Point(86, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Descripción:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // lblDescripcion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.label3.Location = new System.Drawing.Point(86, 171);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(649, 88);
-            this.label3.TabIndex = 2;
-            this.label3.Text = resources.GetString("label3.Text");
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
+            this.lblDescripcion.Location = new System.Drawing.Point(86, 199);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(649, 88);
+            this.lblDescripcion.TabIndex = 2;
+            this.lblDescripcion.Text = resources.GetString("lblDescripcion.Text");
+            this.lblDescripcion.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.textBox1.Location = new System.Drawing.Point(90, 302);
+            this.textBox1.Location = new System.Drawing.Point(90, 330);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(435, 28);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoCheck = false;
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(581, 302);
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
+            this.radioButton1.ForeColor = System.Drawing.Color.Chartreuse;
+            this.radioButton1.Location = new System.Drawing.Point(559, 330);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(81, 26);
+            this.radioButton1.Size = new System.Drawing.Size(88, 29);
             this.radioButton1.TabIndex = 4;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Válido";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // button2
             // 
@@ -142,7 +151,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(734, 27);
+            this.button2.Location = new System.Drawing.Point(759, 22);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(49, 49);
             this.button2.TabIndex = 0;
@@ -152,17 +161,17 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(820, 490);
             this.ControlBox = false;
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxEjercicios);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.bttLimpiar);
@@ -182,10 +191,10 @@
 
         private System.Windows.Forms.Button bttLimpiar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxEjercicios;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button2;
