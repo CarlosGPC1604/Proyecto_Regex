@@ -41,8 +41,8 @@ namespace Proyecto_Regex
             ejercicios.Add(new EjercicioExpresionRegular("Ejercicio 1", "El conjunto de todas las cadenas que coinciden con palabras que contienen exactamente tres letras.", @"[a-zA-Z]{3}"));
             ejercicios.Add(new EjercicioExpresionRegular("Ejercicio 2", "El conjunto de todas las cadenas que coinciden con palabras que contengan solo números enteros positivos de hasta tres dígitos.", @"\b\d{1,3}\b"));
             ejercicios.Add(new EjercicioExpresionRegular("Ejercicio 3", "El conjunto de todas las cadenas que coinciden con palabras que contengan solo direcciones de correo electrónico validas.", @"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}"));
-            ejercicios.Add(new EjercicioExpresionRegular("Ejercicio 4", "El conjunto de todas las cadenas que coinciden con palabras que contengan solo números de teléfono en formato nacional (México).", @"\+\d{2}\d{10}"));
-            ejercicios.Add(new EjercicioExpresionRegular("Ejercicio 5", "El conjunto de todas las cadenas que coinciden con palabras que contengan solo cadenas con 3 letras minúsculas.", @"[a-z]{3}"));
+            ejercicios.Add(new EjercicioExpresionRegular("Ejercicio 4", "El conjunto de todas las cadenas que coinciden con palabras que contengan solo números de teléfono en formato nacional (México).", @"^\+52\d{10}$"));
+            ejercicios.Add(new EjercicioExpresionRegular("Ejercicio 5", "El conjunto de todas las cadenas que coinciden con palabras que contengan solo cadenas con 3 letras minúsculas.", @"^[a-z]{3}$"));
             ejercicios.Add(new EjercicioExpresionRegular("Ejercicio 6", "El conjunto de todas las cadenas que coinciden con palabras que comiencen con una vocal y terminen con una consonante.", @"[aeiouAEIOU][a-zA-Z][bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]"));
             ejercicios.Add(new EjercicioExpresionRegular("Ejercicio 7", "El conjunto de todas las cadenas que coinciden con números decimales (positivos o negativos) con hasta dos decimales.", @"[-+]?[0-9]*\.?[0-9]{1,2}"));
             ejercicios.Add(new EjercicioExpresionRegular("Ejercicio 8", "El conjunto de todas las cadenas que coinciden con URL's que comiencen con 'http://' o 'https://'.", @"^(http|https)://(\*)"));
@@ -59,26 +59,17 @@ namespace Proyecto_Regex
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void bttCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txbCadenaAEvaluar_TextChanged(object sender, EventArgs e)
         {
             string cadenaAEvaluar = txbCadenaAEvaluar.Text;
 
             int indiceSeleccionado = comboBoxEjercicios.SelectedIndex;
+            if (indiceSeleccionado < 0) return;
             string expresionRegular = ejercicios[indiceSeleccionado].RegexPattern;
 
             rbValido.Checked = Regex.IsMatch(cadenaAEvaluar, expresionRegular);
@@ -87,31 +78,24 @@ namespace Proyecto_Regex
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+
+        private void comboBoxEjercicios_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int selectedIndex = comboBoxEjercicios.SelectedIndex;
-            string descripcion = ejercicios[selectedIndex].Descripcion;
+            int indiceSeleccionado = comboBoxEjercicios.SelectedIndex;
+            if (indiceSeleccionado < 0) return;
+            string descripcion = ejercicios[indiceSeleccionado].Descripcion;
             lblDescripcion.Text = descripcion;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            txbCadenaAEvaluar.Enabled = true;
         }
 
         private void bttLimpiar_Click(object sender, EventArgs e)
         {
-
+            comboBoxEjercicios.SelectedIndex = -1;
+            lblDescripcion.Text = "Esperando selección...";
+            rbValido.Text = "Esperando entrada";
+            rbValido.ForeColor = Color.Yellow; rbValido.Checked = false;
+            txbCadenaAEvaluar.Text = string.Empty;
+            txbCadenaAEvaluar.Enabled = false;
         }
 
         private void comboBoxEjercicios_SelectedValueChanged(object sender, EventArgs e)
