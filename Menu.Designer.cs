@@ -35,8 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.txbCadenaAEvaluar = new System.Windows.Forms.TextBox();
+            this.rbValido = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -83,6 +83,7 @@
             this.comboBoxEjercicios.Size = new System.Drawing.Size(287, 30);
             this.comboBoxEjercicios.TabIndex = 1;
             this.comboBoxEjercicios.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBoxEjercicios.SelectedValueChanged += new System.EventHandler(this.comboBoxEjercicios_SelectedValueChanged);
             // 
             // label1
             // 
@@ -119,30 +120,30 @@
             this.lblDescripcion.Text = resources.GetString("lblDescripcion.Text");
             this.lblDescripcion.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox1
+            // txbCadenaAEvaluar
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.textBox1.Location = new System.Drawing.Point(90, 330);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(435, 28);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txbCadenaAEvaluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.txbCadenaAEvaluar.Location = new System.Drawing.Point(90, 330);
+            this.txbCadenaAEvaluar.Name = "txbCadenaAEvaluar";
+            this.txbCadenaAEvaluar.Size = new System.Drawing.Size(435, 28);
+            this.txbCadenaAEvaluar.TabIndex = 3;
+            this.txbCadenaAEvaluar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // radioButton1
+            // rbValido
             // 
-            this.radioButton1.AutoCheck = false;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
-            this.radioButton1.ForeColor = System.Drawing.Color.Chartreuse;
-            this.radioButton1.Location = new System.Drawing.Point(559, 330);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(88, 29);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Válido";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rbValido.AutoCheck = false;
+            this.rbValido.AutoSize = true;
+            this.rbValido.Checked = true;
+            this.rbValido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
+            this.rbValido.ForeColor = System.Drawing.Color.Chartreuse;
+            this.rbValido.Location = new System.Drawing.Point(559, 330);
+            this.rbValido.Name = "rbValido";
+            this.rbValido.Size = new System.Drawing.Size(88, 29);
+            this.rbValido.TabIndex = 4;
+            this.rbValido.TabStop = true;
+            this.rbValido.Text = "Válido";
+            this.rbValido.UseVisualStyleBackColor = true;
+            this.rbValido.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // button2
             // 
@@ -166,8 +167,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(820, 490);
             this.ControlBox = false;
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.rbValido);
+            this.Controls.Add(this.txbCadenaAEvaluar);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -195,8 +196,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox txbCadenaAEvaluar;
+        private System.Windows.Forms.RadioButton rbValido;
         private System.Windows.Forms.Button button2;
     }
 }

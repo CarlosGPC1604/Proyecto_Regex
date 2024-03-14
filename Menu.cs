@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -75,6 +76,14 @@ namespace Proyecto_Regex
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            string cadenaAEvaluar = txbCadenaAEvaluar.Text;
+
+            int indiceSeleccionado = comboBoxEjercicios.SelectedIndex;
+            string expresionRegular = ejercicios[indiceSeleccionado].RegexPattern;
+
+            rbValido.Checked = Regex.IsMatch(cadenaAEvaluar, expresionRegular);
+            rbValido.ForeColor = (rbValido.Checked) ? Color.Green: Color.Red ;
+            rbValido.Text = (rbValido.Checked) ? "Válido": "Inválido";
 
         }
 
@@ -103,6 +112,17 @@ namespace Proyecto_Regex
         private void bttLimpiar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBoxEjercicios_SelectedValueChanged(object sender, EventArgs e)
+        {
+            int indiceSeleccionado = comboBoxEjercicios.SelectedIndex;
+
+            if (indiceSeleccionado >= 0 && indiceSeleccionado < ejercicios.Count)
+            {
+                string descripcion = ejercicios[indiceSeleccionado].Descripcion;
+                lblDescripcion.Text = descripcion;
+            }
         }
     }
 
